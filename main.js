@@ -37,8 +37,10 @@ function displayLibrary() {
         container.className="button-container";
 
         let remove = document.createElement("button");
+        remove.className="remove-button";
         remove.textContent = "Remove";
         let status = document.createElement("button");
+        status.className="read-status-button";
         status.textContent = "Read";
 
         container.append(remove);

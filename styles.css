@@ -49,17 +49,59 @@ h1 {
 .book {
     height: 10rem;
 
+    position: relative;
     background-color: white;
+    border-radius: 2rem;
+    box-shadow: 8px 5px 5px #696969;
     
     align-items: center;
 }
 
 .book p {
     place-self: center;
+
+    font-size: 1rem;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
     gap: 1rem;
+}
+
+.remove-button,
+.read-status-button {
+    height: 2rem;
+    width: 5rem;
+
+    border: none;
+    border-radius: .5rem;
+
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+}
+
+.remove-button {
+    background-color: #ff0000;
+}
+
+.remove-button:hover {
+    background-color: #de0000;
+}
+
+.remove-button:active {
+    background-color: #be0000;
+}
+
+.read-status-button {
+    background-color: #008000;
+}
+
+.read-status-button:hover {
+    background-color: #006e00;
+}
+
+.read-status-button:active {
+    background-color: #005d00;
 }
