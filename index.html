@@ -47,7 +47,7 @@
                     required
                     placeholder="" />
             </div>
-            <div class="form-input">
+            <div class="checkbox-input">
                 <label for="read">
                     <span>Have you read the book?</span>
                     <strong><span aria-label="required">*</span></strong>
@@ -58,14 +58,15 @@
                     type="checkbox"
                     required />
             </div>
-            <button type="submit" class="submit-form-button">Submit</button>
-            <button class="close-form-button" formnovalidate>Close</button>
+            <div class="button-row">
+                <button class="close-form-button" formnovalidate>Close</button>
+                <button type="submit" class="submit-form-button">Submit</button>
+            </div>
         </form>
     </dialog>
     <button class="add">+ Add Book</button>
     <container class="library">
     </container>
-    
     <script src="main.js"></script>
 </body>
 </html>

@@ -70,7 +70,9 @@ h1 {
 }
 
 .remove-button,
-.read-status-button {
+.read-status-button,
+.close-form-button,
+.submit-form-button {
     height: 2rem;
     width: 5rem;
 
@@ -82,32 +84,84 @@ h1 {
     color: white;
 }
 
-.remove-button {
+.remove-button,
+.close-form-button {
     background-color: #ff0000;
 }
 
-.remove-button:hover {
+.remove-button:hover,
+.close-form-button:hover {
     background-color: #de0000;
 }
 
-.remove-button:active {
+.remove-button:active,
+.close-form-button:active {
     background-color: #be0000;
 }
 
-.read-status-button {
+.read-status-button,
+.submit-form-button {
     background-color: #008000;
 }
 
-.read-status-button:hover {
+.read-status-button:hover,
+.submit-form-button:hover {
     background-color: #006e00;
 }
 
-.read-status-button:active {
+.read-status-button:active,
+.submit-form-button:active {
     background-color: #005d00;
 }
 
 .book-form {
+    padding: 1rem;
+
     margin-left: auto;
     margin-right: auto;
     align-self: center;
+}
+
+.book-form form {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+}
+
+.form-input {
+    display: grid;
+    grid-template-columns: 5rem 1fr;
+}
+
+.checkbox-input {
+    display: flex;
+    gap: 1rem;
+}
+
+.button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.form-input input[type="text"],
+.form-input input[type="number"] {
+    height: 1.5rem;
+    padding: 0 5px;
+}
+
+input[type="text"],
+input[type="number"] {
+    font-size: 1rem;
+}
+
+.form-input label {
+    align-self: center;
+}
+
+.form-input,
+.checkbox-input {
+    font-size: 1rem;
 }
