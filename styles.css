@@ -43,4 +43,17 @@ h1 {
 
     display: grid;
     grid-template: 10rem / 1fr 1fr;
+    gap: 1rem;
+}
+
+.book {
+    height: 10rem;
+
+    background-color: white;
+    
+    align-items: center;
+}
+
+.book p {
+    place-self: center;
 }

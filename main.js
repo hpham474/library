@@ -15,10 +15,31 @@ function displayLibrary() {
     const library = document.querySelector(".library");
     for (let i = 0; i < myLibrary.length; i++) {
         let book = document.createElement("div");
-        book.style.height = "10 rem";
-        book.style.width = "10 rem";
-        book.style.border = "black solid 1px";
-        book.textContent = myLibrary[i].title;
+        book.className="book";
+
+        let title = document.createElement("p");
+        let bookTitle= document.createElement("p");
+        let author = document.createElement("p");
+        let bookAuthor = document.createElement("p");
+        let pages = document.createElement("p");
+        let bookPages = document.createElement("p");
+
+        title.textContent = "Title:";
+        bookTitle.textContent = myLibrary[i].title;
+        author.textContent = "Author:";
+        bookAuthor.textContent = myLibrary[i].author;
+        pages.textContent = "Pages:";
+        bookPages.textContent = myLibrary[i].pages;
+
+        book.style.display = "grid";
+        book.style.gridTemplate = "1fr 1fr 1fr 1fr / 4rem 1fr";
+
+        book.appendChild(title);
+        book.appendChild(bookTitle);
+        book.appendChild(author);
+        book.appendChild(bookAuthor);
+        book.appendChild(pages);
+        book.appendChild(bookPages);
 
         library.append(book);
     }
@@ -66,4 +87,4 @@ addBookToLibrary(new Book(
     "759",
     true));
 
-//displayLibrary();
+displayLibrary();
