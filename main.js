@@ -66,6 +66,4 @@ addBookToLibrary(new Book(
     "759",
     true));
 
-console.log(myLibrary);
-
-displayLibrary();
+//displayLibrary();
