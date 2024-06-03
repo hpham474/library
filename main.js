@@ -18,7 +18,7 @@ function displayLibrary() {
         book.className="book";
 
         let title = document.createElement("p");
-        let bookTitle= document.createElement("p");
+        let bookTitle = document.createElement("p");
         let author = document.createElement("p");
         let bookAuthor = document.createElement("p");
         let pages = document.createElement("p");
@@ -31,6 +31,19 @@ function displayLibrary() {
         pages.textContent = "Pages:";
         bookPages.textContent = myLibrary[i].pages;
 
+        let empty = document.createElement("div");
+
+        let container = document.createElement("div");
+        container.className="button-container";
+
+        let remove = document.createElement("button");
+        remove.textContent = "Remove";
+        let status = document.createElement("button");
+        status.textContent = "Read";
+
+        container.append(remove);
+        container.append(status);
+
         book.style.display = "grid";
         book.style.gridTemplate = "1fr 1fr 1fr 1fr / 4rem 1fr";
 
@@ -40,6 +53,8 @@ function displayLibrary() {
         book.appendChild(bookAuthor);
         book.appendChild(pages);
         book.appendChild(bookPages);
+        book.appendChild(empty);
+        book.appendChild(container);
 
         library.append(book);
     }
