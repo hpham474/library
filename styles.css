@@ -105,3 +105,9 @@ h1 {
 .read-status-button:active {
     background-color: #005d00;
 }
+
+.book-form {
+    margin-left: auto;
+    margin-right: auto;
+    align-self: center;
+}

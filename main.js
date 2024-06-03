@@ -62,6 +62,19 @@ function displayLibrary() {
     }
 }
 
+const addButton = document.querySelector(".add");
+const dialog = document.querySelector(".book-form");
+const closeButton = document.querySelector(".close-form-button")
+
+addButton.addEventListener("click", () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener("click", () => {
+    dialog.close();
+});
+
+
 addBookToLibrary(new Book(
     "Harry Potter and the Sorcerer's Stone",
     "JK Rowling",

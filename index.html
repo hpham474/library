@@ -8,9 +8,64 @@
 </head>
 <body>
     <h1>Library</h1>
+    <dialog class="book-form">
+        <form action="" method="post">
+            <div class="form-input">
+                <label for="title">
+                    <span>Title:</span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input
+                    id="title"
+                    name="title"
+                    type="text"
+                    required
+                    placeholder=""
+                    autofocus />
+            </div>
+            <div class="form-input">
+                <label for="author">
+                    <span>Author:</span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input
+                    id="author"
+                    name="author"
+                    type="text"
+                    required
+                    placeholder="" />
+            </div>
+            <div class="form-input">
+                <label for="pages">
+                    <span>Pages:</span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input
+                    id="pages"
+                    name="pages"
+                    type="number"
+                    required
+                    placeholder="" />
+            </div>
+            <div class="form-input">
+                <label for="read">
+                    <span>Have you read the book?</span>
+                    <strong><span aria-label="required">*</span></strong>
+                </label>
+                <input
+                    id="read"
+                    name="read"
+                    type="checkbox"
+                    required />
+            </div>
+            <button type="submit" class="submit-form-button">Submit</button>
+            <button class="close-form-button" formnovalidate>Close</button>
+        </form>
+    </dialog>
     <button class="add">+ Add Book</button>
     <container class="library">
     </container>
+    
     <script src="main.js"></script>
 </body>
 </html>
