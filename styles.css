@@ -120,6 +120,8 @@ h1 {
     margin-left: auto;
     margin-right: auto;
     align-self: center;
+
+    border-radius: 3rem;
 }
 
 .book-form form {
@@ -155,6 +157,11 @@ h1 {
 input[type="text"],
 input[type="number"] {
     font-size: 1rem;
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border: black solid 1px;
 }
 
 .form-input label {
