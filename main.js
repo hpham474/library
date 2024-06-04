@@ -32,12 +32,6 @@ function createBookCard(book) {
 
     console.log(bookRead);
 
-    if(bookRead) {
-        bookCard.className += " read";
-    } else {
-        bookCard.className += " unread";
-    }
-
     let empty = document.createElement("div");
 
     let container = document.createElement("div");
@@ -48,7 +42,16 @@ function createBookCard(book) {
     remove.textContent = "Remove";
     let status = document.createElement("button");
     status.className="read-status-button";
-    status.textContent = "Read";
+
+    if(bookRead) {
+        bookCard.className += " read";
+        status.className += " readButton";
+        status.textContent = "Unread";
+    } else {
+        bookCard.className += " unread";
+        status.className += " unreadButton";
+        status.textContent = "Read";
+    }
 
     container.append(remove);
     container.append(status);

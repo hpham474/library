@@ -92,32 +92,35 @@ h1 {
     color: white;
 }
 
+.readButton,
 .remove-button,
 .close-form-button {
     background-color: #ff0000;
 }
 
+.readButton:hover,
 .remove-button:hover,
 .close-form-button:hover {
     background-color: #de0000;
 }
 
+.readButton:active,
 .remove-button:active,
 .close-form-button:active {
     background-color: #be0000;
 }
 
-.read-status-button,
+.unreadButton,
 .submit-form-button {
     background-color: #008000;
 }
 
-.read-status-button:hover,
+.unreadButton:hover,
 .submit-form-button:hover {
     background-color: #006e00;
 }
 
-.read-status-button:active,
+.unreadButton:active,
 .submit-form-button:active {
     background-color: #005d00;
 }
