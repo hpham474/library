@@ -65,12 +65,36 @@ function displayLibrary() {
 const addButton = document.querySelector(".add");
 const dialog = document.querySelector(".book-form");
 const closeButton = document.querySelector(".close-form-button")
+const submitForm = document.querySelector("form");
 
 addButton.addEventListener("click", () => {
     dialog.showModal();
 });
 
 closeButton.addEventListener("click", () => {
+    dialog.close();
+});
+
+submitForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    let bookTitle = document.getElementById("title").value;
+    let bookAuthor = document.getElementById("author").value;
+    let bookPages = document.getElementById("pages").value;
+    let readStatus = document.getElementById("read").checked;
+
+    addBookToLibrary(new Book(
+        bookTitle,
+        bookAuthor,
+        bookPages,
+        readStatus
+    ));
+
+    document.getElementById("title").value = "";
+    document.getElementById("author").value = "";
+    document.getElementById("pages").value = "";
+    document.getElementById("read").checked = false;
+
     dialog.close();
 });
 
