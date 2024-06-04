@@ -53,6 +53,15 @@ function createBookCard(book) {
         status.textContent = "Read";
     }
 
+    remove.addEventListener("click", (event) => {
+        console.log(
+            event
+            .target
+            .parentNode
+            .parentNode.
+            remove());
+    });
+
     container.append(remove);
     container.append(status);
 
@@ -80,9 +89,10 @@ function displayLibrary() {
     }
 }
 
-const addButton = document.querySelector(".add");
 const dialog = document.querySelector(".book-form");
-const closeButton = document.querySelector(".close-form-button")
+const addButton = document.querySelector(".add");
+const removeButton = document.querySelector(".remove-button");
+const closeButton = document.querySelector(".close-form-button");
 const submitForm = document.querySelector("form");
 
 addButton.addEventListener("click", () => {
@@ -119,7 +129,6 @@ submitForm.addEventListener("submit", (event) => {
 
     dialog.close();
 });
-
 
 addBookToLibrary(new Book(
     "Harry Potter and the Sorcerer's Stone",
