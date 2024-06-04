@@ -28,6 +28,15 @@ function createBookCard(book) {
     bookAuthor.textContent = book.author;
     pages.textContent = "Pages:";
     bookPages.textContent = book.pages;
+    bookRead = book.read;
+
+    console.log(bookRead);
+
+    if(bookRead) {
+        bookCard.className += " read";
+    } else {
+        bookCard.className += " unread";
+    }
 
     let empty = document.createElement("div");
 
@@ -62,49 +71,6 @@ function createBookCard(book) {
 function displayLibrary() {
     const library = document.querySelector(".library");
     for (let i = 0; i < myLibrary.length; i++) {
-        // let book = document.createElement("div");
-        // book.className="book";
-
-        // let title = document.createElement("p");
-        // let bookTitle = document.createElement("p");
-        // let author = document.createElement("p");
-        // let bookAuthor = document.createElement("p");
-        // let pages = document.createElement("p");
-        // let bookPages = document.createElement("p");
-
-        // title.textContent = "Title:";
-        // bookTitle.textContent = myLibrary[i].title;
-        // author.textContent = "Author:";
-        // bookAuthor.textContent = myLibrary[i].author;
-        // pages.textContent = "Pages:";
-        // bookPages.textContent = myLibrary[i].pages;
-
-        // let empty = document.createElement("div");
-
-        // let container = document.createElement("div");
-        // container.className="button-container";
-
-        // let remove = document.createElement("button");
-        // remove.className="remove-button";
-        // remove.textContent = "Remove";
-        // let status = document.createElement("button");
-        // status.className="read-status-button";
-        // status.textContent = "Read";
-
-        // container.append(remove);
-        // container.append(status);
-
-        // book.style.display = "grid";
-        // book.style.gridTemplate = "1fr 1fr 1fr 1fr / 4rem 1fr";
-
-        // book.appendChild(title);
-        // book.appendChild(bookTitle);
-        // book.appendChild(author);
-        // book.appendChild(bookAuthor);
-        // book.appendChild(pages);
-        // book.appendChild(bookPages);
-        // book.appendChild(empty);
-        // book.appendChild(container);
         let book = createBookCard(myLibrary[i]);
 
         library.append(book);
@@ -186,12 +152,12 @@ addBookToLibrary(new Book(
     "Harry Potter and the Half-Blood Prince",
     "JK Rowling",
     "652",
-    true));
+    false));
 
 addBookToLibrary(new Book(
     "Harry Potter and the Deathly Hallows",
     "JK Rowling",
     "759",
-    true));
+    false));
 
 displayLibrary();
