@@ -56,6 +56,32 @@ function createBookCard(book) {
     }
 
     remove.addEventListener("click", (event) => {
+        let titleToChange = 
+            event.
+            target.
+            parentNode.
+            parentNode.
+            querySelector("p:nth-child(2)").
+            textContent;
+
+        let authorToChange = 
+            event.
+            target.
+            parentNode.
+            parentNode.
+            querySelector("p:nth-child(4)").
+            textContent;
+
+        let index = -1;
+        for (let i = 0; i < myLibrary.length; i++) {
+            if(myLibrary[i].title === titleToChange 
+                && myLibrary[i].author === authorToChange ) {
+                index = i;
+            }
+        }
+
+        myLibrary.splice(index, 1);
+        
         event.
             target.
             parentNode.
