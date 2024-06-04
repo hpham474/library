@@ -195,45 +195,21 @@ submitForm.addEventListener("submit", (event) => {
 });
 
 addBookToLibrary(new Book(
-    "Harry Potter and the Sorcerer's Stone",
-    "JK Rowling",
-    "309",
+    "Night",
+    "Elie Wiesel",
+    "116",
     true));
 
 addBookToLibrary(new Book(
-    "Harry Potter and the Chamber of Secret",
-    "JK Rowling",
-    "341",
+    "1984",
+    "George Orwell",
+    "328",
     true));
 
 addBookToLibrary(new Book(
-    "Harry Potter and the Prisoner of Azkaban",
-    "JK Rowling",
-    "435",
-    true));
-
-addBookToLibrary(new Book(
-    "Harry Potter and the Goblet of Fire",
-    "JK Rowling",
-    "734",
-    true));
-
-addBookToLibrary(new Book(
-    "Harry Potter and the Order of the Phoenix",
-    "JK Rowling",
-    "870",
-    true));
-
-addBookToLibrary(new Book(
-    "Harry Potter and the Half-Blood Prince",
-    "JK Rowling",
-    "652",
-    false));
-
-addBookToLibrary(new Book(
-    "Harry Potter and the Deathly Hallows",
-    "JK Rowling",
-    "759",
+    "Farenheit 451",
+    "Ray Bradbury",
+    "156",
     false));
 
 displayLibrary();
