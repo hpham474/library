@@ -6,6 +6,10 @@ function Book (title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+Book.prototype.changeReadStatus = function() {
+    this.read = !this.read;
+    console.log(`${this.title} switch read status to ${this.read}`);
+}
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -30,8 +34,6 @@ function createBookCard(book) {
     bookPages.textContent = book.pages;
     bookRead = book.read;
 
-    console.log(bookRead);
-
     let empty = document.createElement("div");
 
     let container = document.createElement("div");
@@ -54,12 +56,65 @@ function createBookCard(book) {
     }
 
     remove.addEventListener("click", (event) => {
-        console.log(
-            event
-            .target
-            .parentNode
-            .parentNode.
-            remove());
+        event.
+            target.
+            parentNode.
+            parentNode.
+            remove();
+    });
+
+    status.addEventListener("click", (event) => {
+        let titleToChange = 
+            event.
+            target.
+            parentNode.
+            parentNode.
+            querySelector("p:nth-child(2)").
+            textContent;
+
+        let authorToChange = 
+            event.
+            target.
+            parentNode.
+            parentNode.
+            querySelector("p:nth-child(4)").
+            textContent;
+        
+        let index = -1;
+        for (let i = 0; i < myLibrary.length; i++) {
+            if(myLibrary[i].title === titleToChange 
+                && myLibrary[i].author === authorToChange ) {
+                index = i;
+            }
+        }
+
+        myLibrary[index].changeReadStatus();
+
+        if(myLibrary[index].read) {
+            event.
+                target.
+                parentNode.
+                parentNode.
+                className = "book read";
+            event.
+                target.
+                className = "read-status-button readButton"
+            event.
+                target.
+                textContent = "Unread"
+        } else {
+            event.
+                target.
+                parentNode.
+                parentNode.
+                className = "book unread";
+            event.
+                target.
+                className = "read-status-button readButton"
+            event.
+                target.
+                textContent = "Read"
+        }
     });
 
     container.append(remove);
