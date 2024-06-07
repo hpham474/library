@@ -1,14 +1,14 @@
 const myLibrary = [];
 
-function Book (title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
-}
-Book.prototype.changeReadStatus = function() {
-    this.read = !this.read;
-}
+// function Book (title, author, pages, read) {
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
+// Book.prototype.changeReadStatus = function() {
+//     this.read = !this.read;
+// }
 
 function addBookToLibrary(book) {
     myLibrary.push(book);
@@ -193,6 +193,24 @@ submitForm.addEventListener("submit", (event) => {
 
     dialog.close();
 });
+
+class Book {
+    title;
+    author;
+    pages;
+    read;
+
+    constructor (title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    changeReadStatus () {
+        this.read = !this.read;
+    }
+}
 
 addBookToLibrary(new Book(
     "Night",
