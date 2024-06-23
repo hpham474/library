@@ -201,6 +201,14 @@ const removeButton = document.querySelector(".remove-button");
 const closeButton = document.querySelector(".close-form-button");
 const submitForm = document.querySelector("form");
 
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const pages = document.getElementById('pages');
+
+const titleError = document.querySelector('#title + span.error');
+const authorError = document.querySelector('#author + span.error');
+const pagesError = document.querySelector('#pages + span.error');
+
 addButton.addEventListener("click", () => {
     dialog.showModal();
 });
@@ -209,9 +217,82 @@ closeButton.addEventListener("click", () => {
     dialog.close();
 });
 
-submitForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+title.addEventListener("input", () => {
+    if (title.validity.valid) {
+        titleError.innerHTML = '';
+        titleError.className = 'error';
+    } else {
+        if(title.validity.valueMissing) {
+            titleError.textContent = 'You need to enter a title.';
+        }
 
+        titleError.className = 'error active';
+    }
+});
+
+author.addEventListener("input", () => {
+    if (author.validity.valid) {
+        authorError.innerHTML = '';
+        authorError.className = 'error';
+    } else {
+        if(author.validity.valueMissing) {
+            authorError.textContent = 'You need to enter an author.';
+        }
+    
+        authorError.className = 'error active';
+    }
+});
+
+pages.addEventListener("input", () => {
+    if (pages.validity.valid) {
+        pagesError.innerHTML = '';
+        pagesError.className = 'error';
+    } else {
+        if(pages.validity.valueMissing) {
+            pagesError.textContent = 'You need to enter an amount of pages.';
+        }
+
+        pagesError.className = 'error active';
+    }
+});
+
+submitForm.addEventListener('submit', function (event) {
+    event.preventDefault(); 
+    if(!title.validity.valid || !author.validity.valid || !pages.validity.valid ) {
+        showError();
+    } else {
+        submit();
+    }
+  });
+
+function showError() {
+    if(title.validity.valueMissing) {
+        titleError.textContent = 'You need to enter a title.';
+    }
+
+    if(author.validity.valueMissing) {
+        authorError.textContent = 'You need to enter an author.';
+    }
+
+    if(pages.validity.valueMissing) {
+        pagesError.textContent = 'You need to enter an amount of pages.';
+    }
+
+    // Set the styling appropriately
+    if(!title.validity.valid) {
+        titleError.className = 'error active';
+    }
+
+    if(!author.validity.valid) {
+        authorError.className = 'error active';
+    }
+
+    if(!pages.validity.valid) {
+        pagesError.className = 'error active';
+    }
+}
+
+function submit() {
     let bookTitle = document.getElementById("title").value;
     let bookAuthor = document.getElementById("author").value;
     let bookPages = document.getElementById("pages").value;
@@ -234,7 +315,7 @@ submitForm.addEventListener("submit", (event) => {
     library.append(book);
 
     dialog.close();
-});
+}
 
 myLibrary.addBookToLibrary(new Book(
     "Night",
